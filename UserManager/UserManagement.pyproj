@@ -3,13 +3,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>46c0f9d6-8f7b-489f-bb7b-5d74e40ad458</ProjectGuid>
-    <ProjectHome>.</ProjectHome>
+    <ProjectHome>
+    </ProjectHome>
     <StartupFile>UserManager.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>UserManager</Name>
+    <Name>UserManagement</Name>
     <RootNamespace>UserManager</RootNamespace>
     <InterpreterId>Global|ContinuumAnalytics|Anaconda37-64</InterpreterId>
   </PropertyGroup>
@@ -29,6 +30,18 @@
     <Compile Include="BulkInsert.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="config\loadConfig.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="config\__init__.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="groupMembersSearch.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="groupSearch.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="newGroups.py">
       <SubType>Code</SubType>
     </Compile>
@@ -39,6 +52,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="UserManager.py" />
+    <Compile Include="userSearch.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|ContinuumAnalytics|Anaconda37-64" />
@@ -47,9 +63,11 @@
   <ItemGroup>
     <Content Include="data\data.csv" />
     <Content Include="data\level2Migration.csv" />
+    <Content Include="data\test-dlsm.csv" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="data\" />
+    <Folder Include="config\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

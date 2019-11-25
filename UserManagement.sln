@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "UserManager", "UserManager\UserManager.pyproj", "{46C0F9D6-8F7B-489F-BB7B-5D74E40AD458}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "UserManagement", "UserManager\UserManagement.pyproj", "{46C0F9D6-8F7B-489F-BB7B-5D74E40AD458}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

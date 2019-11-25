@@ -8,7 +8,7 @@ import argparse
 
 from arcgis.gis import GIS
 
-envURL="https://environment-test.data.gov.uk/portal"
+envURL="https://environment.data.gov.uk/portal"
 portalOwner = "portaladmin"
 portalPWD = "ArcG!$3nt3rpr!$3Adm!n"
 dataFile = '\\data\\data.csv'
