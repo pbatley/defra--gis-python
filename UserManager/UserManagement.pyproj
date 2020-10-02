@@ -36,16 +36,31 @@
     <Compile Include="config\__init__.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ContentSearch.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="deleteUser.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="groupMembersSearch.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="groupSearch.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GroupsManage.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="newGroups.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="newGroupsByCSV.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="portalConnection.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="portalSearch.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="UserReports.py">

@@ -6,9 +6,9 @@ import sys
 import getpass
 # Admin/publisher user name and password 
 portalUser = 'portaladmin'
-portalPWD = 'ArcG!$3nt3rpr!$3Adm!n'
+portalPWD = 'AGS3nt3rpr!$3Adm!n'
 # Server name
-serverName = 'environment-test.data.gov.uk'
+serverName = 'environment-uat.data.gov.uk'
 portalContextPath = 'portalstg'
 portalURL = 'https://{}/{}'.format(serverName, portalContextPath)
 waContextPath = 'arcgis'
@@ -20,14 +20,14 @@ baseUrl = 'https://{}{}'.format(serverName, waAdminPath)
 
 def addUser(token, data):
 # Create JSON Object
-    data = {"username": "auth0|5c9b46102065f509e3b8349e",
+    data = {"username": "auth0_5eb3e517d8b5460ccfb4bad2",
             "firstname": "Adam",
             "lastname": "Sullivan",
-            "role": "iAAAAAAAAAAAAAAA",
+            "role": "wxrayKGylOIxT935",
             "level": 1,
-            "email": "adam.sullivan@landmark.co.uk",
+            "email": "adamtestso@aol.com",
             "provider": "enterprise",
-            "idpUsername":  "auth0|5c9b46102065f509e3b8349e"
+            "idpUsername":  "auth0|5eb3e517d8b5460ccfb4bad2"
             }    
 
     adminCreateURL = '{}/portaladmin/security/users/createUser?'.format(portalURL)

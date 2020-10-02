@@ -5,17 +5,19 @@ time = datetime
 
 
         
-envURL="https://environment.data.gov.uk/portal"
-portalOwner = "portaladmin"
-portalPWD = "ArcG!$3nt3rpr!$3Adm!n"
+envURL="https://environment-test.data.gov.uk/portalstg"
+portalOwner = "dspuseradmin"
+portalPWD = "D4t4$h4r!ngPl4tf0rm4TST"
+#portalOwner = "portaladmin"
+#portalPWD = "ArcG!$3nt3rpr!$3Adm!n"
 userSearch = None
 groupSearch = None
 groupSearchWithMembers = None
 dataFile = '\\data\\test-dlsm.csv'
 grpids = 'Service Owner'
 qryItem = 'owner:portaladmin'
-uids = {}
-#uids = None#'test'
+#uids = {}
+uids = ''
 email = 'test.com'
 
 try:
@@ -80,6 +82,7 @@ def updateUser(userList, userLevel, userGroup, markedForDeletion):
 def getUsers(ids):
     try:
         users = gis.users
+        
         userSearch = []
 
         if isinstance(ids, dict) and len(ids) !=0:
@@ -110,16 +113,16 @@ def getUsers(ids):
                 #      + ' / ' + userResult.level
                 #      + ' / ' + userResult.role)
                 count += 1
-                userGrps = ''#'User Groups: \n'
-                for grp in userResult.groups:
-                    userGrps += grp.title +' | '
+                #userGrps = ''#'User Groups: \n'
+                #for grp in userResult.groups:
+                #    userGrps += grp.title +' | '
                 print(str(count) 
                       + ' / ' + userResult.fullName
                       + ' / ' + userResult.username
                       + ' / ' + userResult.email
                       + ' / ' + userResult.level
-                      + ' / ' + userResult.role
-                      + ' / ' + userGrps)
+                      + ' / ' + userResult.role)
+                      #+ ' / ' + userGrps)
                 #print(userGrps)
 
         return userSearch
@@ -287,7 +290,7 @@ def deleteUser(userID):
     print('Deleting user: ' + userID.email + ' AND re-assigning users items to ' + portalOwner)
 
 
-def compundUserSearch(users):
+def compoundUserSearch(users):
     count = 1
     print('Line: / Full name: / User name: / Email: / Level: / Role: ')      
     for user in users:
@@ -303,22 +306,21 @@ def compundUserSearch(users):
             #deleteUser(user)  
 
 
-def main():
+def main(object):
     #groupSearch = getGroups(grpids, False, True)  
     #groupSearchWithMembers = getGroups(grpids, True, False) 
     #updateUIDs(groupSearchWithMembers[1])
-    itemSearch = getItems(qryItem)
+    #itemSearch = getItems(qryItem)
     #for item in itemSearch:
     #    print(item.title)
     print('')
     #readDataFile()
     #print(uids)
-    #userSearch = getUsers(uids)
-    #compundUserSearch(userSearch)
+    userSearch = getUsers(uids)
+    #compoundUserSearch(userSearch)
     #if isinstance(userSearch, list):
-    #    updateUser(userSearch, True, True, False)
+        #updateUser(userSearch, True, True, False)
         #updateUser(userSearch, False, False, True)
-
 
 if __name__=='__main__':
     main()
