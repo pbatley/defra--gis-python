@@ -1,13 +1,12 @@
 import datetime
 from config import loadConfig
 from portalConnection import Connection
-
-
+env='TST'
+config = eval("loadConfig.config."+ env)
 time = datetime
 """Change for Portal"""
-target = loadConfig.envURL + loadConfig.suffixPub 
-
-connection = Connection(loadConfig.portalOwner, loadConfig.portalPWD, target)
+target = config['envURL'] + config['suffixPub'] 
+connection = Connection(env, config['portalOwner'], config['portalPWD'], target)
 GIS = connection.set_connection()
 contentMgmt = GIS.content
 
@@ -80,10 +79,10 @@ def main():
     search = _SearchCriteria("title:NativeOysterBedPotential", "title", "asc", 100)
     itemsSearch = getItems(search)
     itemIDs = []
-    for item in itemsSearch:
-        if '20200626' in item.title:
-            itemForDeletion = contentMgmt.get(item.id)
-            DeleteItem(itemForDeletion)
+    #for item in itemsSearch:
+    #    if '20200626' in item.title:
+    #        itemForDeletion = contentMgmt.get(item.id)
+    #        DeleteItem(itemForDeletion)
     #    itemIDs.append(item.id)
     #bulkDelete(itemsSearch)
    
