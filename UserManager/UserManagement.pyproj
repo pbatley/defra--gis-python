@@ -64,6 +64,7 @@
     <Content Include="data\data.csv" />
     <Content Include="data\level2Migration.csv" />
     <Content Include="data\test-dlsm.csv" />
+    <Content Include="helloWorld.txt" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="data\" />
