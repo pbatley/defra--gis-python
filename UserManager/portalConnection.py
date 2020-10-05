@@ -12,7 +12,7 @@ class Connection(object):
     def set_connection(self):
         try:
             gis = GIS(self.portalUrl, self.user, self.passwd, verify_cert=False)
-            print("Successfully logged in as: " + gis.properties.user.username)
+            print("Successfully logged in to the " + self.environment + " environment, as user: " + gis.properties.user.username)
             return gis
         except Exception as e:     
             print('An Error occurred ' + e.args[0] + ' trying to log in')

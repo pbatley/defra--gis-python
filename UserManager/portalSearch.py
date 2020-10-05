@@ -3,16 +3,14 @@ import datetime as dt
 from datetime import datetime
 from config import loadConfig
 from portalConnection import Connection
-
+env='TST'
+config = eval("loadConfig.config."+ env)
 
 def portal_search():
     # Connecting to portal
-    target = loadConfig.TST['envURL'] + loadConfig.TST['suffixPub']
-
-
-    connection = Connection('TST', loadConfig.TST['portalOwner'], loadConfig.TST['portalPWD'], target)
-    GIS = connection.set_connection()
     #password = input("Password: ")
+    target = config['envURL'] + config['suffixPub'] 
+    connection = Connection(env, config['portalOwner'], config['portalPWD'], target)
     gis = GIS#("https://environment-test.data.gov.uk/portal/home", username="portaladmin", password=password)
 
     # Input dates to search between
