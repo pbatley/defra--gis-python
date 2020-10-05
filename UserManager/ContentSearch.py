@@ -1,7 +1,7 @@
 import datetime
 from config import loadConfig
 from portalConnection import Connection
-env='TST'
+env='UAT'
 config = eval("loadConfig.config."+ env)
 time = datetime
 """Change for Portal"""

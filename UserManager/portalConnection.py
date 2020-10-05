@@ -1,4 +1,9 @@
 from arcgis.gis import GIS
+from config import loadConfig
+
+env='TST'
+config = eval("loadConfig.config."+ env)
+target = config['envURL'] + config['suffixPub'] 
 
 class Connection(object):
     """Creation of Portal Connection Class"""
@@ -17,3 +22,4 @@ class Connection(object):
         except Exception as e:     
             print('An Error occurred ' + e.args[0] + ' trying to log in')
 
+connection = Connection(env, config['portalOwner'], config['portalPWD'], target)

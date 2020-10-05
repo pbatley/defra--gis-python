@@ -1,17 +1,20 @@
 ##from arcgis.gis import GIS
 import datetime as dt
 from datetime import datetime
-from config import loadConfig
-from portalConnection import Connection
-env='TST'
-config = eval("loadConfig.config."+ env)
+#from config import loadConfig
+#from portalConnection import Connection
+import portalConnection as pC
+#env='TST'
+#config = eval("loadConfig.config."+ env)
+
 
 def portal_search():
     # Connecting to portal
     #password = input("Password: ")
-    target = config['envURL'] + config['suffixPub'] 
-    connection = Connection(env, config['portalOwner'], config['portalPWD'], target)
-    gis = GIS#("https://environment-test.data.gov.uk/portal/home", username="portaladmin", password=password)
+    #target = config['envURL'] + config['suffixPub'] 
+    #connection = Connection(env, config['portalOwner'], config['portalPWD'], target)
+    connection = pC.connection
+    GIS = connection.set_connection()
 
     # Input dates to search between
     start = input("Please enter a start date in the format dd.mm.yyyy: ")
@@ -25,7 +28,7 @@ def portal_search():
     # Searching portal for all items created between the start and end date
     # Max items must be greater than the total number of items in portal
     content_published = [item
-                         for item in gis.content.search(query="",
+                         for item in GIS.content.search(query="",
                                                         max_items=5000)
                          if item.created > start_timestamp and item.created < end_timestamp]
 
